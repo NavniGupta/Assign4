@@ -168,7 +168,7 @@ if(check==1)
 
  Source_Dest(graph_input);
 
- //APPROX_VC1(graph_input);
+ APPROX_VC1(graph_input);
 
 
 }
