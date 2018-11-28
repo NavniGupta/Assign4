@@ -326,7 +326,7 @@ void Graph::add(Edge e) {
 }
 
 void Graph::clear(unsigned v){
-    n_edges=outputE_copy.size()/2;
+    
     if(v >= adjacency.size()) return;
     for(auto u : adjacency[v]){
         auto &list2 = adjacency[u];
