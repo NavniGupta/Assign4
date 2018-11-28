@@ -249,8 +249,11 @@ void algoThread(Graph &graph)
     pthread_t thread3;
     int a1,a2,a3;
     a1 = pthread_create(&thread1,NULL,APPROX_VC1,&graph_input);
+    pthread_join(thread1,NULL);
     a2 = pthread_create(&thread2,NULL,APPROX_VC2,&graph_input);
+    pthread_join(thread2,NULL);
     a3 = pthread_create(&thread3,NULL,Vertex_Cover,&graph_input);
+    pthread_join(thread3,NULL);
 
 }
 void Esplit()
@@ -363,6 +366,7 @@ int main(int argc, char **argv)
 pthread_t thread;
 int s;
 s = pthread_create(&thread,NULL,GraphInput,NULL);
+    pthread_join(thread,NULL);
 
     return 0;
 }
