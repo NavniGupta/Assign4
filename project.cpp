@@ -8,7 +8,7 @@
 #include <list>
 using namespace std;
 
-unsigned int n;
+unsigned int n,n_edges;
 string str;
 struct Edge{
     unsigned v1,v2;
@@ -223,8 +223,8 @@ void * APPROX_VC1(void *input)
 cout<<"Hi3"<<endl;
 Graph graph_input = *(const Graph *)input;
 VertexVec &C = *new VertexVec();
-
-while(n>0)
+n_edges=outputE_copy.size()/2;
+while(n_edges>0)
 {
      auto v = std::max_element(
                 graph_input.adjacency.begin(),graph_input.adjacency.end(),
@@ -326,13 +326,14 @@ void Graph::add(Edge e) {
 }
 
 void Graph::clear(unsigned v){
+    n_edges=outputE_copy.size()/2;
     if(v >= adjacency.size()) return;
     for(auto u : adjacency[v]){
         auto &list2 = adjacency[u];
         auto i2 = std::find(list2.begin(),list2.end(),v);
         if(i2 != list2.end()){
             list2.erase(i2);
-            --n;
+            --n_edges;
         }
     }
     adjacency[v].clear();
