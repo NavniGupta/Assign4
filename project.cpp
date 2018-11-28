@@ -243,14 +243,14 @@ std::sort( C.begin(), C.end(), std::less<int>());
 }
 void algoThread(Graph &graph)
 {
-    Graph graph_input = *(const Graph *)input;
+    Graph &graph_input = graph;
     pthread_t thread1;
     pthread_t thread2;
     pthread_t thread3;
     int a1,a2,a3;
-    a1 = pthread_create(&thread1,NULL,APPROX_VC1,graph_input);
-    a2 = pthread_create(&thread2,NULL,APPROX_VC2,graph_input);
-    a3 = pthread_create(&thread3,NULL,Vertex_Cover,graph_input);
+    a1 = pthread_create(&thread1,NULL,APPROX_VC1,&graph_input);
+    a2 = pthread_create(&thread2,NULL,APPROX_VC2,&graph_input);
+    a3 = pthread_create(&thread3,NULL,Vertex_Cover,&graph_input);
 
 }
 void Esplit()
