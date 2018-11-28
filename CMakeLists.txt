@@ -21,5 +21,6 @@ include_directories(${CMAKE_SOURCE_DIR}/minisat)
 ## add additional .cpp files if needed
 add_executable(project project.cpp)
 # link MiniSAT libraries
+target_link_libraries(project pthread)
 target_link_libraries(project minisat-lib-static)
 
