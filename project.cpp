@@ -333,7 +333,7 @@ void Graph::clear(unsigned v){
     adjacency[v].clear();
 }
 
-void input()
+void GraphInput()
 {
     while(getline(cin,str))
 
@@ -362,7 +362,7 @@ int main(int argc, char **argv)
 
 pthread_t thread;
 int s;
-s = pthread_create(&thread,NULL,input,NULL);
+s = pthread_create(&thread,NULL,GraphInput,NULL);
 
     return 0;
 }
