@@ -79,9 +79,9 @@ void Source_Dest(Graph &gp)
 }
 
 
-void * Vertex_Cover(Graph &graph)
+void * Vertex_Cover(void *input)
 {
-Graph &graph_input = graph;
+Graph graph_input = *(const Graph *)input;
 VertexVec &C = *new VertexVec();
 
 
@@ -171,9 +171,9 @@ VertexVec &C = *new VertexVec();
 }
 
 
-void * APPROX_VC2(Graph &graph)
+void * APPROX_VC2(void *input)
 {
-    Graph &graph_input = graph;
+    Graph graph_input = *(const Graph *)input;
     bool visited[n];
     for (unsigned int i=0; i<n; i++)
         visited[i] = false;
@@ -216,10 +216,10 @@ void * APPROX_VC2(Graph &graph)
 
 }
 
-void * APPROX_VC1(Graph &graph)
+void * APPROX_VC1(void *input)
 {
 
-Graph &graph_input = graph;
+Graph graph_input = *(const Graph *)input;
 VertexVec &C = *new VertexVec();
 
 while(n>0)
@@ -241,9 +241,9 @@ std::sort( C.begin(), C.end(), std::less<int>());
     std::cout<< C[g]<< " ";
 //    return &C;
 }
-void * algoThread(Graph &graph)
+void * algoThread(void *input)
 {
-    Graph &graph_input = graph;
+    Graph graph_input = *(const Graph *)input;
     pthread_t thread1;
     pthread_t thread2;
     pthread_t thread3;
@@ -333,7 +333,7 @@ void Graph::clear(unsigned v){
     adjacency[v].clear();
 }
 
-void * input(void *arg)
+void input()
 {
     while(getline(cin,str))
 
