@@ -79,7 +79,7 @@ void Source_Dest(Graph &gp)
 }
 
 
-void Vertex_Cover(Graph &graph)
+void * Vertex_Cover(Graph &graph)
 {
 Graph &graph_input = graph;
 VertexVec &C = *new VertexVec();
@@ -171,7 +171,7 @@ VertexVec &C = *new VertexVec();
 }
 
 
-void APPROX_VC2(Graph &graph)
+void * APPROX_VC2(Graph &graph)
 {
     Graph &graph_input = graph;
     bool visited[n];
@@ -216,7 +216,7 @@ void APPROX_VC2(Graph &graph)
 
 }
 
-void APPROX_VC1(Graph &graph)
+void * APPROX_VC1(Graph &graph)
 {
 
 Graph &graph_input = graph;
@@ -241,7 +241,7 @@ std::sort( C.begin(), C.end(), std::less<int>());
     std::cout<< C[g]<< " ";
 //    return &C;
 }
-void algoThread(Graph &graph)
+void * algoThread(Graph &graph)
 {
     Graph &graph_input = graph;
     pthread_t thread1;
