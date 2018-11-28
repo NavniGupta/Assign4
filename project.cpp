@@ -2,6 +2,7 @@
 #include <sstream>
 #include <algorithm>
 #include <memory>
+#include "minisat/core/Solver.h"
 #include <vector>
 #include <set>
 #include <list>
