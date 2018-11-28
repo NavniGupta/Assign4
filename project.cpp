@@ -241,6 +241,18 @@ std::sort( C.begin(), C.end(), std::less<int>());
     std::cout<< C[g]<< " ";
 //    return &C;
 }
+void algoThread(Graph &graph)
+{
+    Graph &graph_input = graph;
+    pthread_t thread1;
+    pthread_t thread2;
+    pthread_t thread3;
+    int a1,a2,a3;
+    a1 = pthread_create(&thread1,NULL,APPROX_VC1,graph_input);
+    a2 = pthread_create(&thread2,NULL,APPROX_VC2,graph_input);
+    a3 = pthread_create(&thread3,NULL,Vertex_Cover,graph_input);
+
+}
 void Esplit()
 {
     Graph &graph_input = *new Graph();
@@ -288,9 +300,7 @@ if(check==1)
 
  Source_Dest(graph_input);
 
-APPROX_VC2(graph_input);
-APPROX_VC1(graph_input);
-Vertex_Cover(graph_input);
+algoThread(graph_input);
 
 
 }
@@ -323,10 +333,9 @@ void Graph::clear(unsigned v){
     adjacency[v].clear();
 }
 
-int main(int argc, char **argv)
+void input()
 {
-
-     while(getline(cin,str))
+    while(getline(cin,str))
 
     {
 
@@ -345,6 +354,15 @@ int main(int argc, char **argv)
 
 
     }
+
+}
+
+int main(int argc, char **argv)
+{
+
+pthread_t thread;
+int s;
+s = pthread_create(&thread,NULL,input,NULL);
 
     return 0;
 }
