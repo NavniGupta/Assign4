@@ -333,7 +333,7 @@ void Graph::clear(unsigned v){
     adjacency[v].clear();
 }
 
-void input()
+void * input(void *arg)
 {
     while(getline(cin,str))
 
