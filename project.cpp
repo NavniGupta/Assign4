@@ -212,7 +212,18 @@ void Graph::add(Edge e) {
     //num_edges ++;
 }
 
-
+void Graph::clear(unsigned v){
+    if(v >= adjacency.size()) return;
+    for(auto u : adjacency[v]){
+        auto &list2 = adjacency[u];
+        auto i2 = std::find(list2.begin(),list2.end(),v);
+        if(i2 != list2.end()){
+            list2.erase(i2);
+            --n;
+        }
+    }
+    adjacency[v].clear();
+}
 
 int main(int argc, char **argv)
 {
