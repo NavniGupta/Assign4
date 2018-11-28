@@ -142,7 +142,9 @@ while(n>0)
 
 }
 std::sort( C.begin(), C.end(), std::less<int>());
-    std::cout<<"APPROX-VC-1: "<< C;
+    std::cout<<"APPROX-VC-1: ";
+    for(unsigned int g=0; g < C.size(); g++)
+    std::cout<< C[g]<< " ";
 //    return &C;
 }
 void Esplit()
