@@ -241,7 +241,7 @@ std::sort( C.begin(), C.end(), std::less<int>());
     std::cout<< C[g]<< " ";
 //    return &C;
 }
-void * algoThread(void *input)
+void algoThread(Graph &graph)
 {
     Graph graph_input = *(const Graph *)input;
     pthread_t thread1;
