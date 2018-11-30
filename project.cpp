@@ -194,7 +194,7 @@ VertexVec &C = *new VertexVec();
         }
         std::cout<<std::endl;
 
-timeCalculate();
+//timeCalculate();
 
 }
 
@@ -242,7 +242,7 @@ void * APPROX_VC2(void *input)
     for (unsigned int i=0; i<n; i++)
         if (visited[i])
           cout << i << " ";
-timeCalculate();
+//timeCalculate();
 }
 
 void * APPROX_VC1(void *input)
