@@ -6,6 +6,8 @@
 #include <vector>
 #include <set>
 #include <list>
+#include <time.h>
+#include <errno.h>
 using namespace std;
 
 unsigned int n,n_edges;
@@ -78,7 +80,32 @@ void Source_Dest(Graph &gp)
        }
 }
 
+void timeCalculate()
+{
 
+clockid_t clk_id;
+    struct timespec tspec;
+    pthread_t tid;
+
+    tid = pthread_self();
+
+    if (pthread_getcpuclockid( tid, &clk_id) == 0)
+    {
+        if (clock_gettime( clk_id, &tspec ) != 0)
+        {
+            perror ("clock_gettime():");
+        }
+        else
+        {
+            printf ("Time is %d seconds, %ld nanoseconds.\n",
+                     tspec.tv_sec, tspec.tv_nsec);
+        }
+    }
+    else
+    {
+        printf ("pthread_getcpuclockid(): no thread with ID %d.\n", tid);
+    }
+}
 void * Vertex_Cover(void *input)
 {
     cout<<"hi1"<<endl;
@@ -167,7 +194,7 @@ VertexVec &C = *new VertexVec();
         }
         std::cout<<std::endl;
 
-
+timeCalculate();
 
 }
 
@@ -215,7 +242,7 @@ void * APPROX_VC2(void *input)
     for (unsigned int i=0; i<n; i++)
         if (visited[i])
           cout << i << " ";
-
+timeCalculate();
 }
 
 void * APPROX_VC1(void *input)
@@ -242,6 +269,7 @@ std::sort( C.begin(), C.end(), std::less<int>());
     for(unsigned int g=0; g < C.size(); g++)
     std::cout<< C[g]<< " ";
 //    return &C;
+timeCalculate();
 }
 void algoThread(Graph &graph)
 {
@@ -326,7 +354,7 @@ void Graph::add(Edge e) {
 }
 
 void Graph::clear(unsigned v){
-    
+
     if(v >= adjacency.size()) return;
     for(auto u : adjacency[v]){
         auto &list2 = adjacency[u];
