@@ -108,7 +108,7 @@ clockid_t clk_id;
 }
 void * Vertex_Cover(void *input)
 {
-    cout<<"hi1"<<endl;
+   // cout<<"hi1"<<endl;
 Graph graph_input = *(const Graph *)input;
 VertexVec &C = *new VertexVec();
 
@@ -201,7 +201,7 @@ VertexVec &C = *new VertexVec();
 
 void * APPROX_VC2(void *input)
 {
-    cout<<"Hi2"<<endl;
+   // cout<<"Hi2"<<endl;
     Graph graph_input = *(const Graph *)input;
     bool visited[n];
     for (unsigned int i=0; i<n; i++)
@@ -247,7 +247,7 @@ void * APPROX_VC2(void *input)
 
 void * APPROX_VC1(void *input)
 {
-cout<<"Hi3"<<endl;
+//cout<<"Hi3"<<endl;
 Graph graph_input = *(const Graph *)input;
 VertexVec &C = *new VertexVec();
 n_edges=outputE_copy.size()/2;
