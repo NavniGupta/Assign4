@@ -97,7 +97,7 @@ clockid_t clk_id;
         }
         else
         {
-            printf ("%d.%ld\n",
+            printf ("%d+%ld/1000000000\n",
                      tspec.tv_sec, tspec.tv_nsec);
         }
     }
