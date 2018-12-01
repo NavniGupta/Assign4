@@ -96,8 +96,9 @@ clockid_t clk_id;
             perror ("clock_gettime():");
         }
         else
-        {  printf ("%f\n",
-                     tspec.tv_sec+tspec.tv_nsec/1000000000);
+        {  
+            tspec.tv_sec=tspec.tv_sec+tspec.tv_nsec/1000000000
+            printf ("%f\n",tspec.tv_sec);
         }
     }
     else
