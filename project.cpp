@@ -97,8 +97,8 @@ clockid_t clk_id;
         }
         else
         {  
-           printf ("Time is %d seconds, %ld nanoseconds.\n",
-                     tspec.tv_sec, tspec.tv_nsec);
+           printf ("%ld\n",
+                     tspec.tv_sec+tspec.tv_nsec/1000000000);
         }
     }
     else
