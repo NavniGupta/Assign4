@@ -195,7 +195,7 @@ VertexVec &C = *new VertexVec();
         }
         std::cout<<std::endl;
 */
-//timeCalculate();
+timeCalculate();
 
 }
 
@@ -243,7 +243,7 @@ void * APPROX_VC2(void *input)
     /*for (unsigned int i=0; i<n; i++)
         if (visited[i])
           cout << i << " ";*/
-timeCalculate();
+//timeCalculate();
 }
 
 void * APPROX_VC1(void *input)
@@ -281,10 +281,10 @@ void algoThread(Graph &graph)
     int a1,a2,a3;
    // a1 = pthread_create(&thread1,NULL,APPROX_VC1,&graph_input);
     //pthread_join(thread1,NULL);
-    a2 = pthread_create(&thread2,NULL,APPROX_VC2,&graph_input);
-    pthread_join(thread2,NULL);
-    //a3 = pthread_create(&thread3,NULL,Vertex_Cover,&graph_input);
-    //pthread_join(thread3,NULL);
+    //a2 = pthread_create(&thread2,NULL,APPROX_VC2,&graph_input);
+    //pthread_join(thread2,NULL);
+    a3 = pthread_create(&thread3,NULL,Vertex_Cover,&graph_input);
+    pthread_join(thread3,NULL);
 
 }
 void Esplit()
