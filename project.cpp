@@ -98,7 +98,7 @@ clockid_t clk_id;
         else
         {  
             
-           printf ("%d seconds,%ld nanoseconds\n",
+           printf ("%d,%ld\n",
                      tspec.tv_sec, tspec.tv_nsec);
         }
     }
