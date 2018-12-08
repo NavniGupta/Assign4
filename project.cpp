@@ -185,7 +185,7 @@ VertexVec &C = *new VertexVec();
         }
         k=(low+high)/2;
     }
-   // cout<<"MIN VC:";
+    cout<<"CNF-SAT-VC:";
     std::sort( C.begin(), C.end(), std::less<int>());
    for (unsigned j=0; j < C.size(); j++){
             std::cout<<C[j];
@@ -244,6 +244,7 @@ void * APPROX_VC2(void *input)
         if (visited[i])
           cout << i << " ";
 //timeCalculate();
+     std::cout<<std::endl;
 }
 
 void * APPROX_VC1(void *input)
@@ -269,7 +270,8 @@ std::sort( C.begin(), C.end(), std::less<int>());
     std::cout<<"APPROX-VC-1: ";
    for(unsigned int g=0; g < C.size(); g++)
     std::cout<< C[g]<< " ";
-   return &C;
+    std::cout<<std::endl;
+    return &C;
 //timeCalculate();
 }
 void algoThread(Graph &graph)
