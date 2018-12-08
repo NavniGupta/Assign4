@@ -196,7 +196,7 @@ VertexVec &C = *new VertexVec();
         std::cout<<std::endl;
 
 //timeCalculate();
-
+return nullptr;
 }
 
 
@@ -245,6 +245,7 @@ void * APPROX_VC2(void *input)
           cout << i << " ";
 //timeCalculate();
      std::cout<<std::endl;
+    return nullptr;
 }
 
 void * APPROX_VC1(void *input)
@@ -391,6 +392,7 @@ void * GraphInput(void * input)
 
 
     }
+    return nullptr;
 
 }
 
@@ -398,8 +400,8 @@ int main(int argc, char **argv)
 {
 
 pthread_t thread;
-int s;
-s = pthread_create(&thread,NULL,GraphInput,NULL);
+
+    pthread_create(&thread,NULL,GraphInput,NULL);
     pthread_join(thread,NULL);
 
     return 0;
