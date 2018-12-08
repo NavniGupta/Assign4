@@ -185,7 +185,7 @@ VertexVec &C = *new VertexVec();
         }
         k=(low+high)/2;
     }
-    cout<<"CNF-SAT-VC:";
+    cout<<"CNF-SAT-VC: ";
     std::sort( C.begin(), C.end(), std::less<int>());
    for (unsigned j=0; j < C.size(); j++){
             std::cout<<C[j];
@@ -239,7 +239,7 @@ void * APPROX_VC2(void *input)
     }
 
     // Print the vertex cover
-   cout<<"APPROX_VC2:";
+   cout<<"APPROX_VC2: ";
     for (unsigned int i=0; i<n; i++)
         if (visited[i])
           cout << i << " ";
@@ -280,13 +280,13 @@ void algoThread(Graph &graph)
     pthread_t thread1;
     pthread_t thread2;
     pthread_t thread3;
-    int a1,a2,a3;
-    a1 = pthread_create(&thread1,NULL,APPROX_VC1,&graph_input);
-    pthread_join(thread1,NULL);
-    a2 = pthread_create(&thread2,NULL,APPROX_VC2,&graph_input);
-    pthread_join(thread2,NULL);
-    a3 = pthread_create(&thread3,NULL,Vertex_Cover,&graph_input);
+    pthread_create(&thread3,NULL,Vertex_Cover,&graph_input);
     pthread_join(thread3,NULL);
+    pthread_create(&thread1,NULL,APPROX_VC1,&graph_input);
+    pthread_join(thread1,NULL);
+    pthread_create(&thread2,NULL,APPROX_VC2,&graph_input);
+    pthread_join(thread2,NULL);
+    
 
 }
 void Esplit()
