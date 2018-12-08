@@ -195,7 +195,7 @@ VertexVec &C = *new VertexVec();
         }
         std::cout<<std::endl;
 
-timeCalculate();
+//timeCalculate();
 
 }
 
