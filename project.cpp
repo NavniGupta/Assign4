@@ -187,14 +187,14 @@ VertexVec &C = *new VertexVec();
     }
    // cout<<"MIN VC:";
     std::sort( C.begin(), C.end(), std::less<int>());
-   /* for (unsigned j=0; j < C.size(); j++){
+   for (unsigned j=0; j < C.size(); j++){
             std::cout<<C[j];
             if(j + 1 != C.size()){
                 std::cout<<' ';
             }
         }
         std::cout<<std::endl;
-*/
+
 timeCalculate();
 
 }
@@ -239,10 +239,10 @@ void * APPROX_VC2(void *input)
     }
 
     // Print the vertex cover
-   // cout<<"APPROX_VC2:";
-    /*for (unsigned int i=0; i<n; i++)
+   cout<<"APPROX_VC2:";
+    for (unsigned int i=0; i<n; i++)
         if (visited[i])
-          cout << i << " ";*/
+          cout << i << " ";
 //timeCalculate();
 }
 
@@ -266,10 +266,10 @@ while(n_edges>0)
 }
 
 std::sort( C.begin(), C.end(), std::less<int>());
-    //std::cout<<"APPROX-VC-1: ";
-   /* for(unsigned int g=0; g < C.size(); g++)
+    std::cout<<"APPROX-VC-1: ";
+   for(unsigned int g=0; g < C.size(); g++)
     std::cout<< C[g]<< " ";
-//    return &C;*/
+   return &C;
 //timeCalculate();
 }
 void algoThread(Graph &graph)
