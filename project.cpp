@@ -80,7 +80,7 @@ void Source_Dest(Graph &gp)
        }
 }
 
-void timeCalculate()
+/*void timeCalculate()
 {
 
 clockid_t clk_id;
@@ -106,7 +106,7 @@ clockid_t clk_id;
     {
         printf ("pthread_getcpuclockid(): no thread with ID %d.\n", tid);
     }
-}
+}*/
 void * Vertex_Cover(void *input)
 {
    // cout<<"hi1"<<endl;
@@ -279,10 +279,10 @@ void algoThread(Graph &graph)
     pthread_t thread2;
     pthread_t thread3;
     int a1,a2,a3;
-   // a1 = pthread_create(&thread1,NULL,APPROX_VC1,&graph_input);
-    //pthread_join(thread1,NULL);
-    //a2 = pthread_create(&thread2,NULL,APPROX_VC2,&graph_input);
-    //pthread_join(thread2,NULL);
+    a1 = pthread_create(&thread1,NULL,APPROX_VC1,&graph_input);
+    pthread_join(thread1,NULL);
+    a2 = pthread_create(&thread2,NULL,APPROX_VC2,&graph_input);
+    pthread_join(thread2,NULL);
     a3 = pthread_create(&thread3,NULL,Vertex_Cover,&graph_input);
     pthread_join(thread3,NULL);
 
